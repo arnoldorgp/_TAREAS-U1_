@@ -494,7 +494,4 @@ while True:
 # https://www.programiz.com/python-programming/string
 
 
-# GITHUB REPOSITORY
-
-# Add your GitHub repository URL here:
-# https://github.com/your_username/your_repository
+#https://github.com/arnoldorgp/_TAREAS-U1_
