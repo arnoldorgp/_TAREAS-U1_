@@ -7,16 +7,24 @@
 
 # SUMMARY
 
-"""
-A string is a data type used to store text.
-Strings are immutable, so they cannot be changed directly.
-We can do operations like joining text, getting its length,
-searching for words and getting parts of a text.
-We can also use uppercase and lowercase letters to organize
-the information.
-In this activity we work with different string problems.
-We also use validations to avoid some errors.
-"""
+# A string is a data type used to store text.
+# Strings are immutable, so they cannot be changed directly.
+# We can concatenate text and get its length.
+# We can also search for words and get parts of a string.
+# Uppercase and lowercase methods help organize text.
+# String methods can also be used to remove extra spaces.
+# In this activity we work with different string problems.
+# We also use validations to avoid incorrect input.
+
+
+# GOOD PRACTICES
+
+# Strings are immutable, so any change creates a new string.
+# It is useful to use strip() and lower() to normalize input.
+# String methods can make the code simpler and easier to understand.
+# Validations should first check if the input is empty.
+# Clear variable names make the code easier to read.
+# Error messages should be easy to understand.
 
 
 # PROBLEM 1
@@ -27,69 +35,47 @@ Description:
 A full name is requested and it is displayed correctly.
 The initials are also displayed.
 
-Input:
+Inputs:
 Full name.
 
-Output:
+Outputs:
 Formatted name and initials.
 
 Validations:
 The name cannot be empty and must have at least two words.
 
 Test cases:
-Normal: juan carlos tovar
-Border: Ana Perez
-Error: "   "
+1) Normal: juan carlos tovar
+2) Border: Ana Perez
+3) Error: "   "
 """
 
-def format_full_name():
-    full_name = input("Write your full name: ")
-    full_name = full_name.strip()
-
-    if len(full_name) == 0:
-        print("Error: invalid input")
-        return
-
-    words = full_name.split()
-
-    if len(words) < 2:
-        print("Error: enter at least two words")
-        return
-
-    formatted_name = []
-    for word in words:
-        formatted_name.append(word.title())
-
-    formatted_name = " ".join(formatted_name)
-
-    initials = ""
-    for word in words:
-        initials = initials + word[0].upper() + "."
-
-    
-    print("no se crea profe, si lo hice yo, ahi va el bueno")
-   
-format_full_name()
-
 while True:
+
     full_name = input("Write your full name: ")
+
     full_name = full_name.strip()
 
     if len(full_name) == 0:
+
         print("Error: invalid input")
         print("Try again")
 
     else:
+
         words = full_name.split()
 
         if len(words) < 2:
+
             print("Error: enter at least two words")
             print("Try again")
 
         else:
+
             formatted_name = []
 
             for word in words:
+
                 formatted_name.append(word.title())
 
             formatted_name = " ".join(formatted_name)
@@ -97,12 +83,14 @@ while True:
             initials = ""
 
             for word in words:
+
                 initials = initials + word[0].upper() + "."
 
             print("Formatted name:", formatted_name)
             print("Initials:", initials)
 
             break
+
 
 # PROBLEM 2
 # Simple email validator
@@ -111,10 +99,10 @@ while True:
 Description:
 An email is checked to see if it has a basic correct format.
 
-Input:
+Inputs:
 An email address.
 
-Output:
+Outputs:
 If the email is valid and its domain.
 
 Validations:
@@ -122,9 +110,9 @@ The email cannot be empty, must have only one @
 and must have a dot after the @.
 
 Test cases:
-Normal: arnoldo@gmail.com
-Border: a@b.c
-Error: arnoldo gmail.com
+1) Normal: arnoldo@gmail.com
+2) Border: a@b.c
+3) Error: arnoldo gmail.com
 """
 
 while True:
@@ -145,6 +133,7 @@ while True:
         for i in range(len(email_text)):
 
             if email_text[i] == "@":
+
                 at_positions.append(i)
 
         has_space = False
@@ -152,6 +141,7 @@ while True:
         for letter in email_text:
 
             if letter == " ":
+
                 has_space = True
 
         if len(at_positions) != 1:
@@ -191,19 +181,19 @@ Description:
 A phrase is checked to see if it reads the same from left
 to right and from right to left.
 
-Input:
+Inputs:
 A phrase.
 
-Output:
+Outputs:
 Indicates if it is a palindrome.
 
 Validations:
 The phrase cannot be empty and must have at least 3 characters.
 
 Test cases:
-Normal: Anita lava la tina
-Border: ana
-Error: "   "
+1) Normal: Anita lava la tina
+2) Border: ana
+3) Error: "   "
 """
 
 phrase = input("\nWrite a phrase: ")
@@ -221,6 +211,7 @@ else:
     words = phrase.split()
 
     for word in words:
+
         clean_phrase = clean_phrase + word
 
     clean_phrase = clean_phrase.lower()
@@ -241,6 +232,7 @@ else:
 
             print("Is palindrome: false")
 
+
 # PROBLEM 4
 # Sentence word stats
 
@@ -249,19 +241,19 @@ Description:
 A sentence is received and information about its words
 is obtained.
 
-Input:
+Inputs:
 A sentence.
 
-Output:
+Outputs:
 Number of words, first, last, shortest and longest word.
 
 Validations:
 The sentence cannot be empty.
 
 Test cases:
-Normal: Python is an easy language
-Border: Hello world
-Error: "   "
+1) Normal: Python is an easy language
+2) Border: Hello world
+3) Error: "   "
 """
 
 while True:
@@ -292,9 +284,11 @@ while True:
             for word in words:
 
                 if len(word) < len(shortest_word):
+
                     shortest_word = word
 
                 if len(word) > len(longest_word):
+
                     longest_word = word
 
             print("Word count:", len(words))
@@ -324,19 +318,19 @@ Strong:
 8 or more characters, uppercase, lowercase, number
 and symbol.
 
-Input:
+Inputs:
 A password.
 
-Output:
+Outputs:
 Password strength.
 
 Validations:
 The password cannot be empty.
 
 Test cases:
-Normal: Hola1234!
-Border: hola1234
-Error: "   "
+1) Normal: Hola1234!
+2) Border: hola1234
+3) Error: "   "
 """
 
 while True:
@@ -360,15 +354,19 @@ while True:
         for letter in password_input:
 
             if letter.isupper():
+
                 has_upper = True
 
             if letter.islower():
+
                 has_lower = True
 
             if letter.isdigit():
+
                 has_number = True
 
             if not letter.isalnum():
+
                 has_symbol = True
 
         if len(password_input) < 8:
@@ -394,24 +392,22 @@ Description:
 A label is created with the product name and its price.
 The label must have exactly 30 characters.
 
-Input:
+Inputs:
 Product name and price.
 
-Output:
+Outputs:
 A 30-character label.
 
 Validations:
 The product name cannot be empty.
 The price must be a positive number.
-
-If the label has more than 30 characters, a warning
-is displayed and the name and price are requested again.
+If the label is longer than 30 characters,
+it is shortened to 30 characters.
 
 Test cases:
-Normal: Mouse / 250
-Border: Pan / 20
-Error: empty product
-More than 30 characters: Product: rubik´s cube | Price: $10
+1) Normal: Mouse / 250
+2) Border: Pan / 20
+3) Error: empty product
 """
 
 while True:
@@ -450,19 +446,19 @@ while True:
 
                 if len(label) > 30:
 
-                    print("Error: the label has more than 30 characters")
-                    print("Try again")
+                    label = label[:30]
 
                 else:
 
                     spaces = 30 - len(label)
 
                     for i in range(spaces):
+
                         label = label + " "
 
-                    print('Label: "' + label + '"')
+                print('Label: "' + label + '"')
 
-                    break
+                break
 
         except ValueError:
 
@@ -472,34 +468,33 @@ while True:
 
 # CONCLUSIONS
 
-"""
-In this activity I learned that strings are used to work
-with text.
-I learned to use strip() to remove unnecessary spaces.
-We also used split() to separate words from a sentence.
-lower() and upper() are used to work with uppercase and
-lowercase letters.
-Slicing is used to get part of a string.
-I also learned that strings are immutable, so when we make
-changes, a new string is created.
-Validations help prevent the program from receiving
-incorrect data.
-"""
+# String handling is important for working with input and output data.
+# Methods like strip(), lower(), split() and join() help organize text.
+# Normalizing text makes comparisons more reliable.
+# Validations help prevent incorrect or unwanted data.
+# I learned that strings are immutable in Python.
+# I also learned how slicing can be used to obtain part of a string.
 
 
 # REFERENCES
 
 # 1. Python Documentation - Built-in Types.
 # https://docs.python.org/3/library/stdtypes.html
-
+#
 # 2. Python Documentation - Built-in Functions.
 # https://docs.python.org/3/library/functions.html
-
+#
 # 3. W3Schools - Python Strings.
 # https://www.w3schools.com/python/python_strings.asp
-
+#
 # 4. W3Schools - Python String Methods.
 # https://www.w3schools.com/python/python_ref_string.asp
-
+#
 # 5. Programiz - Python Strings.
 # https://www.programiz.com/python-programming/string
+
+
+# GITHUB REPOSITORY
+
+# Add your GitHub repository URL here:
+# https://github.com/your_username/your_repository
