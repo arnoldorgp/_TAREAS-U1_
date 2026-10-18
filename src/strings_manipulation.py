@@ -490,7 +490,16 @@ incorrect data.
 # REFERENCES
 
 # 1. Python Documentation - Built-in Types.
-# 2. Python Documentation - Text Sequence Type: str.
-# 3. Python Documentation - String Methods.
-# 4. Class notes about data types in Python.
-# 5. Activity "String Handling in Python".
+# https://docs.python.org/3/library/stdtypes.html
+
+# 2. Python Documentation - Built-in Functions.
+# https://docs.python.org/3/library/functions.html
+
+# 3. W3Schools - Python Strings.
+# https://www.w3schools.com/python/python_strings.asp
+
+# 4. W3Schools - Python String Methods.
+# https://www.w3schools.com/python/python_ref_string.asp
+
+# 5. Programiz - Python Strings.
+# https://www.programiz.com/python-programming/string
